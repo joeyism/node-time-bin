@@ -1,0 +1,28 @@
+{
+  "name": "time-bin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeyism/node-time-bin.git"
+  },
+  "keywords": [
+    "time",
+    "bin",
+    "binning",
+    "timestamp",
+    "histogram",
+    "sum",
+    "frequency"
+  ],
+  "author": "Joey Sham <sham.joey@gmail.com> (http://www.joeyism.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeyism/node-time-bin/issues"
+  },
+  "homepage": "https://github.com/joeyism/node-time-bin#readme"
+}
