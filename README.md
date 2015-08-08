@@ -1,12 +1,12 @@
-#time-bin
+# time-bin
 A module that takes in time series and outputs the binned version of it. This was a fork of [timestamp-binning](https://github.com/belici/timestamp-binning).
 
-##Installation
+## Installation
 To install, simply run
 
     > npm install --save time-bin
 
-##Usage
+## Usage
 
     var timestampBinner = require('time-bin');
          
@@ -32,10 +32,10 @@ To install, simply run
     console.log(binner.hist);
     //will output: [ 0, 0, 0, 0, 2, 3, 1 ]
 
-##Differences from timestamp-binning
+## Differences from timestamp-binning
 * time-bin bins in the past times, instead of future
 * time-bin exclude time that is outside of the range
 
-##Version
+## Version
 **1.0.0**
 * First publish
