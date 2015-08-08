@@ -1,7 +1,7 @@
 {
   "name": "time-bin",
   "version": "1.0.0",
-  "description": "",
+  "description": "A module that takes in time series and outputs the binned version of it",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
