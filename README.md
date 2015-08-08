@@ -33,7 +33,6 @@ To install, simply run
     //will output: [ 0, 0, 0, 0, 2, 3, 1 ]
 
 ##Differences from timestamp-binning
-* time-bin bins from the latest time, instead of to the next monday
 * time-bin bins in the past times, instead of future
 * time-bin exclude time that is outside of the range
 

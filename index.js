@@ -75,7 +75,7 @@ module.exports = function(evalPeriodString, binSizeString, excludeBursts, useNow
 	}
     
     var getBin = function(date){
-		var bin = Math.floor((refDate.getTime() - date.getTime()) / binSize);
+		var bin = Math.ceil((refDate.getTime() - date.getTime()) / binSize);
         return bin;
 		//return Math.floor(evalPeriod - ((refDate.getTime() - date.getTime()) / binSize) % evalPeriod);
     };
@@ -110,20 +110,22 @@ module.exports = function(evalPeriodString, binSizeString, excludeBursts, useNow
 			var updated = [];		//used to keep track of updated bins in histogram.
 			for (var i in dates) {
 				var bin = getBin(dates[i]);
-				if (excludeBursts) {
-					this.hist_array[bin] = 1;
-					this.hist_object[bin].count = 1;
-				} else {
-					if (excludeBurstsOnce && !updated[bin]) {
-						this.hist_array[bin]++;
-						this.hist_object[bin].count++;
-						updated[bin] = true;	//mark bin as updated => do not increment again
-					} else if (!excludeBurstsOnce) {
-						this.hist_array[bin]++;
-						this.hist_object[bin].count++;
-					}
-				}	
-			}
-		}
-	};
+                if (bin < evalPeriod){
+                    if (excludeBursts) {
+                        this.hist_array[bin] = 1;
+                        this.hist_object[bin].count = 1;
+                    } else {
+                        if (excludeBurstsOnce && !updated[bin]) {
+                            this.hist_array[bin]++;
+                            this.hist_object[bin].count++;
+                            updated[bin] = true;	//mark bin as updated => do not increment again
+                        } else if (!excludeBurstsOnce) {
+                            this.hist_array[bin]++;
+                            this.hist_object[bin].count++;
+                        }
+                    }
+                }    
+            }
+        }
+    };
 };
